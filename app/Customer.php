@@ -10,7 +10,7 @@ class Customer extends Model
     public $primarykey = 'id';
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email',
     ];
 
     public function invoices(){

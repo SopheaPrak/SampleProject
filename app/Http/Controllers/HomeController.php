@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Item;
 use App\Category;
-use App\Invoice_total;
+use App\Invoice;
 
 class HomeController extends Controller
 {
@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $itemCount = Item::where('enabled', 1)->count();
         $categoryCount = Category::where('enabled', 1)->count();
-        $invoiceCount = Invoice_total::count();
+        $invoiceCount = Invoice::count();
         return view('home', compact('itemCount', 'categoryCount', 'invoiceCount'));
     }
 }

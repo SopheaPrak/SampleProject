@@ -9,7 +9,11 @@ class Invoice_total extends Model
     protected $table = 'invoice_totals';
     public $primarykey = 'id';
 
-    public function invoices(){
-        return $this->hasMany(Invoice::class);
+    protected $fillable = [
+        'total_amount',
+    ];
+
+    public function invoice(){
+        return $this->belongsTo(Invoice::class);
     }
 }

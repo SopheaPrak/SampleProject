@@ -9,8 +9,16 @@ class Invoice_item extends Model
     protected $table = 'invoice_items';
     public $primarykey = 'id';
 
+    protected $casts = [
+        'item_id' => 'array',
+    ];
+
+    protected $fillable = [
+        'item_id', 'quantity', 'price', 'total',
+    ];
+
     public function items(){
-        return $this->hasMany(Item::class);
+       return $this->hasMany(Item::class);
     }
 
     public function invoice(){

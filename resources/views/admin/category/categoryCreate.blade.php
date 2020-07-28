@@ -66,7 +66,7 @@
             value="1">
           </input>
 
-          <button class="btn btn-primary">Add Category</button>
+          <button class="btn btn-primary mb-4">Add Category</button>
         </div>
 
       </div>

@@ -21,14 +21,13 @@
     </tr>
     @foreach ($invoices as $invoice)
     <tr>
-      <td>{{ $invoice->invoice_number }}</td>
-      <td>{{ $invoice->invoiced_at }}</td>
+      <td>{{ "IV-".str_pad($invoice->id, 5, "0", STR_PAD_LEFT) }}</td>
+      <td>{{ $invoice->created_at }}</td>
       <td>{{ $invoice->amount }}</td>
       <td>{{ $invoice->currency }}</td>
       <td>{{ $invoice->customer_id }}</td>
       <td>
         <form action="iv/{{ $invoice->id }}/delete" method="POST">
-          <a class="btn btn-primary" href="">View</a>
           <a class="btn btn-primary" href="iv/{{ $invoice->id }}/edit">Edit</a>
           @csrf
           @method('DELETE')

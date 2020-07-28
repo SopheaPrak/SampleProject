@@ -67,7 +67,7 @@
             value="1">
           </input>
 
-          <button class="btn btn-primary">Update</button>
+          <button class="btn btn-primary mb-4">Update</button>
         </div>
 
       </div>

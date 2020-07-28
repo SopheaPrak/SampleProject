@@ -23,13 +23,11 @@ class CustomerController extends Controller
         $data = request()->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
         ]);
 
         Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
         ]);
 
         return redirect('/ct');
@@ -50,7 +48,6 @@ class CustomerController extends Controller
         $data = request()->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
         ]);
   
         $customer->update($data);

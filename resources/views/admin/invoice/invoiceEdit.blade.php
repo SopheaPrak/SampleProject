@@ -9,8 +9,9 @@
 
 @section('content')
   <div class="container">
-    <form action="/iv/store" enctype="multipart/form-data" method="post">
+    <form action="/iv/{{ $invoice->id }}" enctype="multipart/form-data" method="post">
       @csrf
+      @method('PATCH')
 
       <div class="row">
         <div class="col-8 offset-2">
@@ -21,7 +22,7 @@
               type="text"
               class="form-control{{ $errors->has('amount') ? ' is-invalid' : '' }}"
               name="amount"
-              value="{{ old('amount') }}"
+              value="{{ old('amount') ?? $invoice->amount }}"
               autocomplete="amount" autofocus>
 
             @if ($errors->has('amount'))
@@ -38,7 +39,7 @@
               type="text"
               class="form-control{{ $errors->has('currency') ? ' is-invalid' : '' }}"
               name="currency"
-              value="{{ old('currency') }}"
+              value="{{ old('currency') ?? $invoice->currency }}"
               autocomplete="currency" autofocus>
 
             @if ($errors->has('currency'))
@@ -93,7 +94,7 @@
               type="text"
               class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}"
               name="quantity"
-              value="{{ old('quantity') }}"
+              value="{{ old('quantity') ?? $invoice->quantity }}"
               autocomplete="quantity" autofocus>
 
             @if ($errors->has('quantity'))
@@ -120,7 +121,7 @@
             @endif
           </div>
 
-            <button class="btn btn-primary mb-4">Add Invoice</button>
+            <button class="btn btn-primary mb-4">Update</button>
           </div>
 
         </div>

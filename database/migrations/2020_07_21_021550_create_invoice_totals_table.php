@@ -15,7 +15,7 @@ class CreateInvoiceTotalsTable extends Migration
     {
         Schema::create('invoice_totals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('invoice_id');
+            $table->unsignedBigInteger('invoice_id')->nullable();
             $table->decimal('total_amount');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

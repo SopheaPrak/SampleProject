@@ -16,7 +16,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Category ID</th>
+      <th>Category</th>
       <th>Sale Price</th>
       <th>Purchase Price</th>
       <th>Quantity</th>
@@ -28,7 +28,7 @@
       <td>{{ $item->id }}</td>
       <td>{{ $item->name }}</td>
       <td>{{ $item->description }}</td>
-      <td>{{ $item->category_id }}</td>
+      <td>{{ $item->category->name }}</td>
       <td>{{ $item->sale_price }}$</td>
       <td>{{ $item->purchase_price }}$</td>
       <td>{{ $item->quantity }}</td>

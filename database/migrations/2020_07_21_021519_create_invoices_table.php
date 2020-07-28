@@ -15,14 +15,15 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('invoice_number');
+            $table->double('amount', 8, 2);
+            $table->decimal('currency');
+            $table->unsignedBigInteger('customer_id');
             $table->timestamp('invoiced_at')->nullable();
-            $table->decimal('amount');
-            $table->double('currency', 8, 2);
-            $table->foreignId('customer_id');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
+
+            $table->index('customer_id');
         });
     }
 

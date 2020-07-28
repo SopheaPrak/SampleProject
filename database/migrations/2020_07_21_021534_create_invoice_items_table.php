@@ -15,8 +15,8 @@ class CreateInvoiceItemsTable extends Migration
     {
         Schema::create('invoice_items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('invoice_id');
-            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('invoice_id')->nullable();
+            $table->json('item_id');
             $table->decimal('quantity');
             $table->double('price', 8, 2);
             $table->decimal('total');
@@ -25,7 +25,6 @@ class CreateInvoiceItemsTable extends Migration
             $table->softDeletes();
 
             $table->index('invoice_id');
-            $table->index('item_id');
         });
     }
 

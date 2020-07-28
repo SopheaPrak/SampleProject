@@ -133,7 +133,7 @@
             value="1">
           </input>
 
-          <button class="btn btn-primary">Add Item</button>
+          <button class="btn btn-primary mb-4">Add Item</button>
         </div>
 
       </div>

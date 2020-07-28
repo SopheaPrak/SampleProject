@@ -37,19 +37,7 @@
             @endif
           </div>
 
-          <div class="form-group row">
-            <label for="password" class="col-md-4 col-form-label">Password</label>
-
-            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" autocomplete="new-password">
-
-            @if ($errors->has('password'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('password') }}</strong>
-              </span>
-            @endif
-          </div>
-
-          <button class="btn btn-primary">Add Customer</button>
+          <button class="btn btn-primary mb-4">Add Customer</button>
         </div>
       </div>
     </form>
